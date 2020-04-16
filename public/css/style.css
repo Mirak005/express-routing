@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  font-family: lato, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  /* margin:46px 66px 60px; */
+  height: 158px;
+}
+#logo-popu-link {
+  width: 67px;
+  height: 67px;
+  align-self: flex-start;
+  margin: 46px 66px;
+}
+.navmenu {
+  margin: 66px 0 45px 0;
+}
+
+.navmenu a {
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1.08px;
+  text-align: center;
+  color: #000000;
+  opacity: 0.87;
+  padding: 10px;
+  position: relative;
+  margin: 0 10px;
+  width: 168px;
+  height: 47;
+}
+
+.navmenu a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2.5px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  opacity: 0.4;
+}
+.navmenu a:hover:before {
+  visibility: visible;
+  width: 100%;
+  opacity: 1;
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.product {
+  height: 280px;
+  width: 280px;
+}
+.aside {
+  min-width: 20%;
+  overflow: hidden;
+}
+.title-page {
+  height: 43px;
+  font-size: 21px;
+  margin-left: 24.5px;
+  margin-top: 79px;
+  letter-spacing: 1.56px;
+  color: rgba(30, 30, 30, 1);
+  border-bottom: 1px solid black;
+}
+
+.product-section {
+  width: fit-content;
+}
+.title {
+  width: 1090px;
+  height: 187px;
+  font-size: 40px;
+  margin-top: 148.2;
+  margin-bottom: 25px;
+  margin-left: 80px;
+}
+.product-title {
+  margin-left: 80px;
+}
+
+.title-artwork {
+  width: 368px;
+  height: 72px;
+  font-size: 16px;
+  font-weight: bold;
+  padding-right: 100px;
+  margin: 30px;
+  letter-spacing: 0.24px;
+  color: rgba(30, 30, 30, 1);
+
+  border-bottom: 1px solid black;
+  text-align: left;
+}
+.product {
+  margin: 10px;
+}
+.product-container {
+  margin-left: 67px;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* about-page*/
+.about-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10% 5%;
+}
+
+.about-container p {
+  text-align: left;
+  font: Medium 26px/32px Lato;
+  letter-spacing: 1.56px;
+  color: #1e1e1e;
+  font-weight: bold;
+  width: 80%;
+}
+.about-container img {
+  height: 450px;
+  width: 300px;
+  margin-right: 5%;
+}
+.designer-description {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.designer-name {
+  margin: 0;
+  text-align: left;
+  font: Bold 16px/22px Lato;
+  letter-spacing: 1.56px;
+  color: #202020;
+}
+/* contact*/
+.contact-description {
+  width: 260px;
+
+  height: 24px;
+
+  text-align: left;
+
+  font: Regular 20px/24px Lato;
+
+  letter-spacing: 1.2px;
+
+  color: #4c4c4c;
+
+  margin: 0% 9%;
+  opacity: 0.5;
+}
+
+.image-contact {
+  width: 100%;
+  height: 450px;
+  margin: 0ppx 0 0;
+  margin: 0px 0 0 50%;
+}
+.closed-container{
+  display: flex;
+  flex-direction: column;
+  margin:2% 15%;
+}
+
+.closed-message{
+  margin: 0 15%;
+  font-size: 20px;
+  text-align: center;
+}

@@ -1,26 +1,25 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 
-
-
-
-
-app.get("/", (req, res) => {
+//check time
+function check() {
   let reqDate = new Date();
   let condition = reqDate.getHours() > 8 && reqDate.getHours() < 17;
-
-  console.log(!condition);
+  console.log(condition)
+  console.log(reqDate.getHours())
 
   if (condition) {
-    res.sendFile(__dirname + "/public/");
+    return true 
   } else {
-    res.redirect("/closed.html")
-   
+    return false
   }
-});
+}
 
 
-app.use(express.static(__dirname + "/public"));
+app.use("/" , check() ? express.static(__dirname + "/public") : express.static(__dirname + "/private") );
+
+//Run the Server
 
 app.listen(5000, err => {
   if (err) console.log("The server is not runing");
@@ -30,20 +29,3 @@ app.listen(5000, err => {
         "CTRL + C to stop the server from runing"
     );
 });
-
-// css issue
-
-// app.use(date=(req,res,next)=>{
-
-//   let reqDate= new Date()
-//   let condition=reqDate.getHours()>8 && reqDate.getHours()<17
-//   console.log(!condition )
-
-//   if(condition){
-
-//     // res.send("<h1>we are closed</h1>")
-//        res.sendFile(__dirname + "/public/closed.html"  )
-
-//     }
-//   else  next()
-// })
