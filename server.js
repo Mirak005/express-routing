@@ -2,26 +2,26 @@ const express = require("express");
 const app = express();
 
 //check time
-function check() {
-  let reqDate = new Date();
-  let condition = reqDate.getHours() > 8 && reqDate.getHours() < 17;
-  console.log(condition)
-  console.log(reqDate.getHours())
-
-  if (condition) {
-    return true 
-  } else {
-    return false
-  }
+function checkTime(from , to ) {
+  let reqDate = new Date().getHours();
+  let condition = reqDate > from  && reqDate < to;
+ console.log(condition)
+  return condition 
 }
 
+//  serve /public or /closed depending on the time of the request
 
-app.use("/" , check() ? express.static(__dirname + "/public") : express.static(__dirname + "/closed") );
+app.use(
+  "/",
+  checkTime(8 , 17)
+    ? express.static(__dirname + "/public")
+    : express.static(__dirname + "/closed")
+);
+
 
 //Run the Server
-
 app.listen(5000, err => {
-  if (err) console.log("The server is not runing");
+  if (err) console.log("Error!:The server is not runing");
   else
     console.log(
       "server is runing on port 5000...\n" +
