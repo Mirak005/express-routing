@@ -17,7 +17,7 @@ function check() {
 }
 
 
-app.use("/" , check() ? express.static(__dirname + "/public") : express.static(__dirname + "/private") );
+app.use("/" , check() ? express.static(__dirname + "/public") : express.static(__dirname + "/closed") );
 
 //Run the Server
 
